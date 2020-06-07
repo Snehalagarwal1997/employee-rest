@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Employee Relationship Manager</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body style="margin-top: 50px;
+  margin-bottom: 100px;
+  margin-right: 80px;
+  margin-left: 80px;">
+    <h1 style="text-align:center;font-family:Times New Roman">Employee Management Application</h1>
+    <h3 class="btn btn-secondary btn-lg btn-block" style="text-align:center;font-family:Times New Roman">Delete employee</h3>
+    <hr></hr>
+    
+    <form action="#" th:action="@{/employee/delete/{id}(id=${employee.id})}" method="get" th:object="${employee}" class="jumbotron">
+       <h4 style="font-family:Times New Roman">Are you sure you want to delete this employee ?</h4>
+       <span style="text-align:center;font-family:Times New Roman;font-size:20px;font-style: italic">First name : </span>
+        <span style="text-align:center;font-family:Times New Roman;font-size:20px;" th:text="${employee.firstName}"></span>
+        <br></br>
+        
+       <span style="text-align:center;font-family:Times New Roman;font-size:20px;font-style: italic">Last name : </span>
+       <span style="text-align:center;font-family:Times New Roman;font-size:20px" th:text="${employee.lastName}"></span>
+       <br></br>
+ 
+        <span style="text-align:center;font-family:Times New Roman;font-size:20px;font-style: italic">E-mail : </span>
+        <span style="text-align:center;font-family:Times New Roman;font-size:20px" th:text="${employee.email}"></span>
+        <br></br>
+        <br></br>
+        <input type="submit" class="btn btn-primary" value="Confirm Delete"/> 
+    </form>
+</body>
+</html>

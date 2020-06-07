@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Employee Relationship Manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+  </head>
+  <body style="margin-top:50px;
+  margin-bottom: 100px;
+  margin-right: 80px;
+  margin-left: 80px;">
+  <div class="container">
+  
+  <h1 style="text-align:center;font-family:Times New Roman">Employee Management Application<span><a style="float:right" class="btn btn-primary btn-lg btn" href="/employee/showAdd">Add New Employee</a></span></h1>
+  <hr></hr>
+  
+  <table class="table table-hover table-dark" width="100%">
+                                   <thead>
+                                    <tr>
+                                        <th>First name</th>
+                                        <th>Last name</th>
+                                        <th>Email</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="employee : ${allEmployees}">
+                                        <td th:text="${employee.firstName}"></td>
+                                        <td th:text="${employee.lastName}"></td>
+                                        <td th:text="${employee.email}"></td>
+                                        <td><a class="btn btn-warning" th:href="@{/employee/edit/{id}(id=${employee.id})}">Edit</a></td>
+                                        <td><a class="btn btn-danger" th:href="@{/employee/confirmDelete/{id}(id=${employee.id})}">Delete</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                              <br></br>
+                        
+
+  </div>
+ </body>
+</html>

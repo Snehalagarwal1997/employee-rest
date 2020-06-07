@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Employee Relationship Manager</title>
+<link href="css/styles.css" rel="stylesheet" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+</head>
+<body style="margin-top: 50px;
+  margin-bottom: 100px;
+  margin-right: 80px;
+  margin-left: 80px;">
+    <!-- <h1>Employee Management Application</h1> -->
+    <!--<form action="#" th:action="@{/employee/add}" method="post" th:object="${employee}">
+        <label>First name:</label>
+        <input type="text" th:field="*{firstName}" /><br/>
+        
+        <label>Last name:</label>
+        <input type="text" th:field="*{lastName}" /><br/>
+ 
+        <label>E-mail:</label>
+        <input type="text" th:field="*{email}" /><br/>
+ 
+        <button type="submit">Register</button>    
+    </form> -->
+    <h1 style="text-align:center;font-family:Times New Roman">Employee Management Application</h1>
+   <form action="#" th:action="@{/employee/add}" method="post" th:object="${employee}">
+   <h3 class="btn btn-secondary btn-lg btn-block" style="text-align:center;font-family:Times New Roman">Add new employee</h3>
+   <hr></hr>
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" th:field="*{firstName}"  class="form-control" placeholder="First Name"/>
+    <span style="color: red;font-style: italic" class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name error</span>
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" th:field="*{lastName}"  class="form-control" placeholder="Last Name"/>
+    <span style="color: red;font-style: italic" class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name error</span>
+  </div>
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" th:field="*{email}" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"/>
+    <span style="color: red;font-style: italic" class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</span>
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</body>
+</html>
+
