@@ -1,3 +1,3 @@
 # employee-rest
 
-This is a demo project to learn the functionalities of github
+This is a employee management project in which the backend are spring rest apis and the front end is the spring mvc
